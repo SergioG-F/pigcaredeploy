@@ -1,0 +1,73 @@
+{% extends "base.html" %}
+
+{% block content %}
+   <!-- Left side columns -->
+   <div class="col-md-12">
+    <div class="row">
+      <!-- Sales Card -->
+      <div class="col-md-12">
+        <div class="card info-card sales-card">
+          <div class="card-body mt-2">
+            <div class="row">
+              <div class="col-md-3">
+                  <img src="{{ url_for('static', filename='img/image01.jpg') }}" style="width: 348px; height: 234px;">
+              </div>
+              <div class="col-md-3">
+                  <img src="{{ url_for('static', filename='img/image02.jpg') }}" style="width: 348px; height: 234px;">
+              </div>
+              <div class="col-md-3">
+                  <img src="{{ url_for('static', filename='img/image03.jpg') }}" style="width: 348px; height: 234px;">
+              </div>
+              <div class="col-md-3">
+                  <img src="{{ url_for('static', filename='img/image04.jpg') }}" style="width: 348px; height: 234px;">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div><!-- End Sales Card -->
+
+      <div class="col-md-6">
+          <div class="card card-text">
+          <div class="card-header">
+              <h3 class="text__page"  style="font-weight: 1000; text-align: center;">NUESTRA MISIÓN</h3>
+          </div>
+            <div class="card-body mt-2">
+              <p class="text__page" style="font-weight: 400; font-size: 1.4em;">
+                  En PigCare, combinamos nuestra experiencia en salud animal con
+                  las últimas innovaciones  tecnológicas para monitorear de manera 
+                 precisa y 
+                 proactiva la salud de los cerdos. 
+                 Nuestra plataforma IoT ofrece soluciones inteligentes y
+                  datos en tiempo real que permiten optimizar el manejo sanitario y
+                  mejorar el rendimiento general de las operaciones porcinas. 
+                 Estamos comprometidos a 
+                 proporcionar herramientas y conocimientos que impulsen el futuro 
+                 de la salud porcina
+                  hacia nuevos niveles de eficiencia y cuidado. 
+              </p>
+            </div>
+          </div>
+      </div>
+
+      <div class="col-md-6">
+          <div class="card card-text">
+          <div class="card-header">
+              <h3 class="text__page"  style="font-weight: 900 !important; text-align: center;">NUESTRA VISIÓN</h3>
+          </div>
+            <div class="card-body mt-2">
+              <p class="text__page" style="font-weight: 400; font-size: 1.4em;">
+                  Ser líderes en la industria porcina mediante la 
+                  integración innovadora de
+                  tecnología de Internet de las Cosas (IoT)
+                  para asegurar la salud y bienestar óptimos de 
+                  los cerdos, redefiniendo los
+                  estándares de prevención de enfermedades 
+                  y gestión sanitaria.
+              </p>
+            </div>
+          </div>
+      </div>
+
+    </div>
+  </div><!-- End Left side columns -->
+{% endblock %}

@@ -1,0 +1,41 @@
+
+    .text__page {
+        color: #0f7d44;
+    }
+
+    .pagetitle h1{
+        color: #0f7d44 !important;
+    }
+
+    .breadcrumb-item{
+        color: #0f7d44 !important;
+    }
+
+    .card-text{
+        min-height: 450px;
+    }
+
+    .sidebar-nav .nav-link i{
+        color: white !important;
+    }
+
+    .sidebar-nav .nav-link span {
+        color: white !important;
+    }
+
+    .nav-heading{
+        color: white !important;
+    }
+
+    .sidebar{
+        background: #0f7d44 !important;
+    }
+
+    .nav-link{
+        background: rgba(255, 255, 255, 0.137) !important;
+    }
+
+    .nav-link.collapsed{
+        background: #0f7d44 !important;
+    }
+   

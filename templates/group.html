@@ -1,0 +1,113 @@
+{% extends "base.html" %} {% block content %}
+
+<div class="row">
+  <div class="col-md-6">
+    <div class="card">
+      <div class="card-body">
+        <div class="video-container" id="videoContainer">
+          <video id="videoElement" width="640" height="480" autoplay></video>
+        </div>
+        <canvas
+          id="overlayCanvas"
+          width="640"
+          height="480"
+          style="display: none"
+        ></canvas>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Detección</h5>
+
+        <canvas id="detectionsChart"></canvas>
+      </div>
+
+      <div class="card-body">
+        <canvas id="percentageChart"></canvas>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-6">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Estados</h5>
+
+        <!-- Pie Chart -->
+        <div id="pieChart" style="min-height: 400px" class="echart"></div>
+
+        <script>
+          document.addEventListener("DOMContentLoaded", () => {
+            echarts.init(document.querySelector("#pieChart")).setOption({
+              title: {
+                text: "Estados de cerdo",
+                subtext: "Estados de cerdo detectados",
+                left: "center",
+              },
+              tooltip: {
+                trigger: "item",
+              },
+              legend: {
+                orient: "vertical",
+                left: "left",
+              },
+              series: [
+                {
+                  name: "Estado",
+                  type: "pie",
+                  radius: "50%",
+                  data: [
+                    {
+                      value: 1048,
+                      name: "Bien",
+                    },
+                    {
+                      value: 735,
+                      name: "Mal",
+                    },
+                  ],
+                  emphasis: {
+                    itemStyle: {
+                      shadowBlur: 10,
+                      shadowOffsetX: 0,
+                      shadowColor: "rgba(0, 0, 0, 0.5)",
+                    },
+                  },
+                },
+              ],
+            });
+          });
+        </script>
+        <!-- End Pie Chart -->
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Detección de movimiento</h5>
+
+        <!-- Line Chart -->
+        <div id="lineChart" style="min-height: 400px" class="echart"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-6">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Resultados de detección</h5>
+        <div id="detectionsOutput">
+          <p>Resultados de los diferentes modelos se mostrarán aquí.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="{{ url_for('static', filename='js/camara.js') }}"></script>
+<script src="{{ url_for('static', filename='js/chart.js') }}"></script>
+
+{% endblock %}

@@ -1,0 +1,22 @@
+
+  .video-container {
+    position: relative;
+    width: 640px; /* Ajusta el ancho según el tamaño de tu video */
+    height: 480px; /* Ajusta la altura según el tamaño de tu video */
+    border: 1px solid #ccc;
+  }
+
+  /* Estilo para el rectángulo de anotación */
+  .annotation-rectangle {
+    position: absolute;
+    pointer-events: none; /* Evita que el rectángulo interfiera con los eventos del video */
+    border: 2px solid rgb(101, 234, 0);
+  }
+
+  /* Estilo para el texto de la anotación */
+  .annotation-text {
+    position: absolute;
+    font-size: 14px; /* Tamaño de fuente */
+    pointer-events: none; /* Evita que el texto interfiera con los eventos del video */
+    color: rgb(101, 234, 0);
+  }

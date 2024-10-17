@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="col-12">
+  <div class="card">
+    <div class="card-body">
+      <h5 class="card-title">Lista de usuarios</h5>
+      <a class="btn btn-primary" href="{{ url_for('create_user') }}">Crear usuario</a>
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Email</th>
+            <th scope="col">Nombres</th>
+            <th scope="col">Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for user in users %}
+          <tr>
+              <td>{{ user.username }}</td>
+              <td>{{ user.names }}</td>
+              <td>
+                  <a href="{{ url_for('update_user', id=user.id) }}" class="btn btn-success">Editar</a>
+                  {% if user.id != session['user_id'] %}
+                  <a href="{{ url_for('delete_user', id=user.id) }}" class="btn btn-danger" onclick="return confirm('¿Estás seguro de eliminar a este usuario?');">Eliminar</a>
+                  {% endif %}
+              </td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+{% endblock %}
